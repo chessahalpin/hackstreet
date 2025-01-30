@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Video2 from './assets/Video2.svg';
 import { fetchFromLocalhost } from './coach-helper';
+import StreamlabsLogo from './assets/StreamlabsLogo.svg';
 import { useState } from 'react';
 import './Streams.css';
 
@@ -18,6 +19,25 @@ export function Streams() {
 
     return (
         <div style={{ padding: 40, maxWidth: 1000 }}>
+              {isLoading && (
+                <div
+                    className="overlay"
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                        zIndex: 1000,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                >
+                    <img src={StreamlabsLogo} alt="Streamlabs Logo" className="spinner" style={{ width: '100px', height: 'auto' }} />
+                </div>
+            )}
             <h2>Streams</h2>
             <div
                 style={{

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Video2 from './assets/Video2.svg';
+import Video2 from './assets/stream-image.png';
 import { fetchFromLocalhost } from './coach-helper';
 import StreamlabsLogo from './assets/StreamlabsLogo.svg';
 import { useState } from 'react';
@@ -8,18 +8,33 @@ import './Streams.css';
 export function Streams() {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
     const handleClick = async () => {
         setIsLoading(true);
         const data = await fetchFromLocalhost();
         setIsLoading(false);
-        console.log('data',data);
-        navigate('/', { state: { data } });
-        return data;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            navigate('/', { state: { data } });
+        }, 500); // Match this with CSS transition duration
     };
-
+    useState(() => {
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setIsTransitioning(false);
+        }, 100);
+    }, []);
     return (
-        <div style={{ padding: 40, maxWidth: 1000 }}>
-              {isLoading && (
+        <div
+            style={{
+                padding: 40,
+                maxWidth: 1000,
+                opacity: isTransitioning ? 0 : 1,
+                transition: 'opacity 0.5s ease-in-out',
+            }}
+        >
+            {isLoading && (
                 <div
                     className="overlay"
                     style={{
@@ -39,10 +54,11 @@ export function Streams() {
                 </div>
             )}
             <h2>Streams</h2>
+
             <div
                 style={{
                     borderRadius: 8,
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
                     padding: 20,
                     display: 'flex',
                     flexDirection: 'column',

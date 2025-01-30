@@ -5,6 +5,7 @@ import App from './App.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Streams } from './Streams.jsx';
+import FirstStreamCongrats from './FirstStreamCongrats.tsx';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/streams" element={<Streams />} />
+                <Route path="/start" element={<FirstStreamCongrats />} />
             </Routes>
         </BrowserRouter>
     </StrictMode>

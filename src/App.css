@@ -1,24 +1,24 @@
 /* src/App.css */
 :root {
-  --primary: #17242d; /* Dark background */
-  --secondary: #80f5d2; /* Teal accent */
-  --accent: #f85640; /* Red accent for alerts */
-  --light: #ffffff; /* Light text */
-  --dark: #2b383f; /* Darker card background */
-  --gray: #bdc2c4; /* Gray for secondary text */
+    --primary: #17242d; /* Dark background */
+    --secondary: #80f5d2; /* Teal accent */
+    --accent: #f85640; /* Red accent for alerts */
+    --light: #ffffff; /* Light text */
+    --dark: #2b383f; /* Darker card background */
+    --gray: #bdc2c4; /* Gray for secondary text */
 }
 
 body {
-  background-color: var(--primary);
-  color: var(--light);
-  font-family: "Roboto";
-  margin: 0;
-  padding: 0;
+    background-color: var(--primary);
+    color: var(--light);
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
 }
 
 button {
-  background-color: var(--secondary);
-  color: black;
+    background-color: var(--secondary);
+    color: black;
 }
 
 .overlay {
@@ -36,57 +36,57 @@ button {
 }
 
 @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px); /* Adjust the height of the bounce */
-  }
-  60% {
-    transform: translateY(-10px); /* Adjust the height of the bounce */
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px); /* Adjust the height of the bounce */
+    }
+    60% {
+        transform: translateY(-10px); /* Adjust the height of the bounce */
+    }
 }
 
 .spinner {
-  animation: bounce 1s infinite; /* Adjust duration as needed */
+    animation: bounce 1s infinite; /* Adjust duration as needed */
 }
 
 .header {
-  text-align: center;
-  margin: 20px 0;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .card {
-  background-color: var(--dark); /* Darker card background */
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--dark); /* Darker card background */
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
-  color: var(--secondary); /* Teal color for titles */
-  font-size: 1.5em;
+    color: var(--secondary); /* Teal color for titles */
+    font-size: 1.5em;
 }
 
 .card-body {
-  color: var(--gray); /* Gray for body text */
+    color: var(--gray); /* Gray for body text */
 }
 
 .read-more-button {
-  background-color: var(--secondary); /* Teal color for buttons */
-  color: var(--light);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: var(--secondary); /* Teal color for buttons */
+    color: var(--light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .read-more-button:hover {
-  background-color: var(--accent); /* Change to red on hover */
+    background-color: var(--accent); /* Change to red on hover */
 }

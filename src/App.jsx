@@ -16,11 +16,22 @@ import droppedFrames from './assets/dropped-frames.svg';
 import notifications from './assets/notifications.svg';
 import StreamlabsIcon from './assets/streamlabs.svg';
 import Card from './Card';
+import { useLocation } from 'react-router-dom';
 
 function App() {
     const [isSpinning, setIsSpinning] = useState(false);
     const [isPart2, setIsPart2] = useState(false);
 
+    const location = useLocation();
+    const [locationState, setLocationState] = useState(null);
+    useEffect(() => {
+        const state = location.state;
+        console.log('🚀 ~ state:', state);
+        if (state?.data) {
+            setLocationState(state.data);
+            console.log('Received data:', state.data);
+        }
+    }, []);
     const handleClick = () => {
         setIsSpinning(true);
         setTimeout(() => {
@@ -161,6 +172,7 @@ function App() {
                         video={isPart2 ? Thumbnail2 : Thumbnail3}
                         icon={isPart2 ? droppedFrames : cloudbot}
                     />
+                    {locationState && locationState?.map((item, index) => <Card title={item.Title} description={item.Feedback} />)}
                 </div>
                 <img src={isPart2 ? Video2 : Video} alt="Video" style={{ cursor: 'pointer' }} />
             </div>

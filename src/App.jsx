@@ -17,6 +17,7 @@ import notifications from "./assets/notifications.svg";
 import StreamlabsIcon from "./assets/streamlabs.svg";
 import Card from "./Card";
 import { useLocation } from "react-router-dom";
+import PlayButton from "./assets/media-share-2.png";
 
 import colors from "./colors";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -192,11 +193,52 @@ function App() {
             </details>
           )}
         </div>
-        <img
-          src={isPart2 ? Video2 : Video}
-          alt="Video"
-          style={{ cursor: "pointer", width: "700px" }}
-        />
+        <div
+          style={{
+            position: "relative",
+            width: "700px",
+            height: "fit-content",
+          }}
+        >
+          <img
+            src={isPart2 ? Video2 : Video}
+            alt="Video"
+            style={{
+              cursor: "pointer",
+              width: "100%", // Ensure it takes the full width of the container
+              height: "auto", // Maintain aspect ratio
+            }}
+          />
+
+          {/* Overlay */}
+          <div
+            style={{
+              position: "absolute",
+              cursor: "pointer",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent black
+              zIndex: 0, // Make sure overlay stays behind the play button
+            }}
+          ></div>
+
+          {/* Play Button */}
+          <img
+            src={PlayButton}
+            alt="Play Button"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1, // Ensure the play button is on top of the overlay
+              cursor: "pointer",
+            }}
+          />
+        </div>
+
         <div
           style={{
             display: "flex",

@@ -59,7 +59,7 @@ const Card = ({ title, description, button, video, icon }) => {
           height: "fit-content",
         }}
       >
-        <button>{button}</button>
+        <button style={{ width: 155, fontSize: 14 }}>{button}</button>
       </div>
 
       <div

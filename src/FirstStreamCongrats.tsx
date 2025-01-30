@@ -56,7 +56,7 @@ export const FirstStreamCongrats = () => {
                     onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#86EFAC')}
                     onClick={handleNavigation}
                 >
-                    Power Up Your Creator Journey
+                    Power up your streamer journey
                 </button>
             </div>
         </div>

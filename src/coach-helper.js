@@ -1,4 +1,7 @@
 import team2 from "./assets/team-2.svg";
+import smile from "./assets/smile.svg";
+import Vector from "./assets/Vector.svg";
+import droppedFrames from "./assets/dropped-frames.svg";
 
 export async function fetchFromLocalhost() {
   try {
@@ -31,25 +34,25 @@ const recommendations = [
     Title: "Positive Self-Motivation",
     Feedback:
       "It's great that you shared your intention to have a career in gaming. Encourage yourself and viewers to stay motivated by setting achievable goals during the stream. Share small wins or progress milestones to inspire both you and your audience.",
-    icon: "/icons/trophy.svg",
+    icon: smile,
   },
   {
     Title: "Interactive Gameplay",
     Feedback:
       "Your anticipation to start the game after a break is good energy! Consider inviting viewers to suggest strategies or participate in game-related decisions. This can make them feel involved and more connected to your content.",
-    icon: "/icons/gamepad.svg",
+    icon: Vector,
   },
   {
     Title: "Music Discussion",
     Feedback:
       "Discussing your music preferences is a nice personal touch. Engage with viewers by asking about their music tastes or giving recommendationss. This can create a lively discussion and strengthen community bonds.",
-    icon: "/icons/music.svg",
+    icon: team2,
   },
   {
     Title: "Clarity and Focus",
     Feedback:
       "Some parts of your commentary are informative but can drift off-topic. Keep a slightly tighter focus on game-related content and use transitions for other topics. This can help maintain viewer interest and attention.",
-    icon: "/icons/target.svg",
+    icon: droppedFrames,
   },
 ];
 // Example usage:

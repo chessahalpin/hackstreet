@@ -77,7 +77,7 @@ const Card = ({ title, description, button, video, icon }) => {
                         justifyContent: 'center',
                     }}
                 >
-                    <img src={video} alt="Video" style={{ cursor: 'pointer', width: '600px' }} />
+                    <img src={video} alt="Video" style={{ cursor: 'pointer', }} />
                     <img
                         src={PlayButton}
                         alt="Play Button"

@@ -12,7 +12,7 @@ export function Streams() {
         setIsLoading(true);
         const data = await fetchFromLocalhost();
         setIsLoading(false);
-        console.log(data);
+        console.log('data',data);
         navigate('/', { state: { data } });
         return data;
     };

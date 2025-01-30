@@ -24,9 +24,15 @@ function App() {
     setIsSpinning(true);
     setTimeout(() => {
       setIsSpinning(false);
-      setIsPart2(true);
+      setIsPart2(prev => !prev);
     }, 2000);
   };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '0') {
+      handleClick();
+    }
+  });
 
   return (
     <div style={{ display: "grid", gap: 15, position: "relative" }}>
@@ -65,7 +71,7 @@ function App() {
         </div>
       </div>
       <div style={{ fontWeight: 500, fontSize: 20 }}>
-        You’re on the road to your first 5 followers! We have personalized
+        You're on the road to your first 5 followers! We have personalized
         recommendations based on your last stream to help you get there.
       </div>
 
@@ -181,10 +187,9 @@ function App() {
       </div>
 
       <div style={{ fontSize: 16, fontWeight: 500 }}>
-        Don’t stop this hot streak! Ready to go live again?
+        Don't stop this hot streak! Ready to go live again?
       </div>
       <button
-        onClick={handleClick}
         style={{
           display: "flex",
           alignItems: "center",

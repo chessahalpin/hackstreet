@@ -28,17 +28,9 @@ function App() {
     }, 2000);
   };
 
-  if (isSpinning) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          position: "relative", 
-        }}
-      >
+  return (
+    <div style={{ display: "grid", gap: 15, position: "relative" }}>
+      {isSpinning && (
         <div
           style={{
             position: "absolute", 
@@ -46,22 +38,21 @@ function App() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Black background with 50% opacity
-            zIndex: -1, // Send it to the back
+            backgroundColor: "rgba(0, 0, 0, 0.7)", // Black background with 70% opacity
+            zIndex: 1000, // Ensure it's on top of the content
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
-        <img
-          src={StreamlabsLogo}
-          alt="Streamlabs Logo"
-          className="spinner"
-          style={{ width: "100px", height: "auto" }}
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div style={{ display: "grid", gap: 15 }}>
+        >
+          <img
+            src={StreamlabsLogo}
+            alt="Streamlabs Logo"
+            className="spinner"
+            style={{ width: "100px", height: "auto" }}
+          />
+        </div>
+      )}
       <div style={{ display: "flex", gap: 20, alignItems: "end" }}>
         <img src={StreamlabsLogo} alt="Streamlabs Logo" className="logo" />
         <div

@@ -38,7 +38,7 @@ button {
 }
 
 .spinner {
-  animation: bounce 2s infinite; /* Adjust duration as needed */
+  animation: bounce 1s infinite; /* Adjust duration as needed */
 }
 
 .header {

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react/no-unescaped-entities */
+import { useState, useEffect } from 'react';
 import './App.css';
 import StreamlabsLogo from './assets/StreamlabsLogo.svg';
 import Video from './assets/Video.svg';
@@ -34,29 +35,37 @@ function App() {
     const handleClick = () => {
         setIsSpinning(true);
         setTimeout(() => {
-            setIsSpinning(false);
             setIsPart2((prev) => !prev);
+        }, 1000);
+        setTimeout(() => {
+            setIsSpinning(false);
         }, 2000);
     };
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === '0') {
-            handleClick();
-        }
-    });
+    useEffect(() => {
+        const handleKeydown = (e) => {
+            if (e.key === '0') {
+                handleClick();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeydown);
+        return () => document.removeEventListener('keydown', handleKeydown);
+    }, []);
 
     return (
         <div style={{ display: 'grid', gap: 15, position: 'relative' }}>
             {isSpinning && (
                 <div
+                    className="overlay"
                     style={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundColor: 'rgba(0, 0, 0, 0.7)', // Black background with 70% opacity
-                        zIndex: 1000, // Ensure it's on top of the content
+                        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                        zIndex: 1000,
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
@@ -76,7 +85,6 @@ function App() {
                     Welcome to your streaming journey, @salmanali!
                 </div>
             </div>
-
             <div style={{ fontWeight: 500, fontSize: 20 }}>
                 You're on the road to your first 5 followers! We have personalized recommendations based on your last stream to help you get there.
             </div>

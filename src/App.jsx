@@ -20,6 +20,7 @@ import { useLocation } from "react-router-dom";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import colors from "./colors";
 config.autoAddCss = false;
 
 function App() {
@@ -203,7 +204,7 @@ function App() {
             icon={isPart2 ? droppedFrames : cloudbot}
           />
           {locationState?.length > 0 && (
-            <details style={{ }}>
+            <details style={{}}>
               <summary
                 style={{
                   cursor: "pointer",
@@ -213,7 +214,7 @@ function App() {
                   width: "100%",
                   fontSize: 16,
                   fontWeight: 500,
-                  margin: 0
+                  margin: 0,
                 }}
               >
                 View More Recommendations
@@ -225,6 +226,7 @@ function App() {
                     title={item.Title}
                     description={item.Feedback}
                     icon={item.icon}
+                    video={item.video}
                   />
                 ))}
               </div>
@@ -236,28 +238,47 @@ function App() {
           alt="Video"
           style={{ cursor: "pointer" }}
         />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 16,
+            fontWeight: 500,
+            gridColumn: "span 2",
+            width: "100%",
+            gap: 50,
+          }}
+        >
+          <div
+            style={{
+              fontSize: "24px", // Larger text for emphasis
+              fontWeight: 700, // Bold for importance
+              color: colors.secondary, // Teal color
+              animation: "softColorChange 4s ease-in-out infinite", // Smooth color transition
+            }}
+          >
+            Don't stop this hot streak! Ready to go live again?
+          </div>
+          <button
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 273,
+              height: 64,
+              borderRadius: 100,
+            }}
+          >
+            <img
+              src={StreamlabsIcon}
+              alt="Streamlabs Icon"
+              style={{ marginRight: 8 }}
+            />
+            Launch Streamlabs Desktop
+          </button>
+        </div>
       </div>
-
-      <div style={{ fontSize: 16, fontWeight: 500 }}>
-        Don't stop this hot streak! Ready to go live again?
-      </div>
-      <button
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: 273,
-          height: 64,
-          borderRadius: 100,
-        }}
-      >
-        <img
-          src={StreamlabsIcon}
-          alt="Streamlabs Icon"
-          style={{ marginRight: 8 }}
-        />
-        Launch Streamlabs Desktop
-      </button>
     </div>
   );
 }

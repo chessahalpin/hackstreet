@@ -40,6 +40,21 @@ details[open] summary ~ * {
   }
 }
 
+@keyframes bounceText {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-10px); }
+  50% { transform: translateY(0); }
+  70% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Soft Color Change (Teal and White) */
+@keyframes softColorChange {
+  0% { color: #31C3A2; }  /* Teal */
+  50% { color: #FFFFFF; }  /* White */
+  100% { color: #31C3A2; }  /* Back to Teal */
+}
+
 details summary {
   transition: 0.2s;
   padding: 10px;

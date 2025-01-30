@@ -55,7 +55,7 @@ export function Streams() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                     <img src={Video2} alt="Video" style={{ cursor: 'pointer', width: '50%' }} />
                     <div>
-                        <button onClick={handleClick} style={{ backgroundColor: '#FFFFFF', color: '#1D1D1D', border: 'none', borderRadius: 4 }}>
+                        <button onClick={handleClick}>
                             Get recommendation{' '}
                             {isLoading && (
                                 <span

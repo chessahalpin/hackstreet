@@ -103,6 +103,47 @@ function App() {
 
       <div
         style={{
+          display: "flex",
+          alignItems: "center",
+          height: 24,
+          borderRadius: 4,
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            width: "60%",
+            height: "100%",
+            backgroundColor: "#72D5FF",
+            borderRadius: "4px",
+            position: "relative",
+          }}
+        >
+          <span
+            style={{
+              position: "absolute",
+              right: 10,
+              top: "50%",
+              transform: "translateY(-50%)",
+              color: "black",
+              fontWeight: "bold",
+            }}
+          >
+            3/5 followers
+          </span>
+        </div>
+        <div
+          style={{
+            width: "40%",
+            height: "100%",
+            backgroundColor: "black",
+            borderRadius: 4,
+          }}
+        ></div>
+      </div>
+
+      <div
+        style={{
           display: "grid",
           gridTemplateColumns: "50% 50%",
           gap: 20,
